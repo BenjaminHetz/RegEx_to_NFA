@@ -24,26 +24,26 @@ public class REDriver {
 	 */
 	public static void main(String[] args) throws FileNotFoundException {
 		//The file name is passed as an argument
-				String fileName = args[0];
-				File file = new File(fileName);
-				if(file.exists()){
-					Scanner scan = new Scanner(file);
-					//the first line is the set of final states
-					//get the string of the final states and split it on a space
-					String regEx = scan.nextLine().trim();
-					REInterface re = new RE(regEx);
-					NFA nfa = re.getNFA();
-					//now process the strings
-					DFA dfa = nfa.getDFA();
-					while(scan.hasNext()){
-						boolean accept = dfa.accepts(scan.nextLine());
-						System.out.println(accept?"yes":"no");
-					}
-					scan.close();
-				} else {
-					System.out.println("Cannot find file " + fileName);
-				}
-
+                String fileName = args[0];
+                File file = new File(fileName);
+                if(file.exists()){
+                        Scanner scan = new Scanner(file);
+                        //the first line is the set of final states
+                        //get the string of the final states and split it on a space
+                        String regEx = scan.nextLine().trim();
+                        REInterface re = new RE(regEx);
+                        NFA nfa = re.getNFA();
+                        //now process the strings
+                        DFA dfa = nfa.getDFA();
+                        while(scan.hasNext()){
+                                boolean accept = dfa.accepts(scan.nextLine());
+                                System.out.println(accept?"yes":"no");
+                        }
+                        scan.close();
+                } else {
+                        System.out.println("Cannot find file " + fileName);
+                }
+                
 	}
-
+       
 }

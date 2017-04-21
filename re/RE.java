@@ -4,11 +4,11 @@ import fa.nfa.NFA;
 
 public class RE implements REInterface {
 
-        private NFA parsed;
+        private String regEx;
         
         public RE(String regEx)
         {
-                parsed = getNFA();
+                this.regEx = regEx;
         }
         public NFA getNFA()
         {
