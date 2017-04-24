@@ -1,0 +1,45 @@
+# Project 3: Regular Expressions
+
+* Author: Benjamin Hetz
+* Class: CS361 Section 1
+* Semester: Spring 2017
+
+## Overview
+
+This program generates an NFA by parsing a regular expression.
+
+## Compiling and Using
+
+To compile from top level project directory
+        javac -cp ".:./CS361FA.jar" re/REDriver.java
+
+To run from top level project directory after compilation
+        java -cp ".:./CS361FA.jar" re.REDriver ./tests/p3tc1.txt
+        
+## Discussion
+
+This project actually wasn't as difficult when I got down into it as I thought it would be.
+I kicked myself a couple of times for very simple mistakes that caused me huge headaches (like
+creating a state and working on it and then adding a new state with the same name but no transitions
+to my NFA.)
+
+One thing that tripped me up was parsing terms, I needed to do concatenation but couldn't if I didn't have
+anything yet (like on the first run), so I merely checked if the term was null and then concatenated if
+it wasn't. This worked out pretty well for me considering my project works.
+
+I got lots of NullPointerExceptions because I didn't add the states from one state into another on concatenation
+or union.
+
+## Testing
+
+I tested this project using the test cases provided only. It was nearly 3am when I finished so I didn't have the
+mental capacity to make test cases.
+
+## Extra Credit
+
+There were no extra credit opportunities.
+
+## Sources used
+Not sure whether to include first link since it was from project handout
+[Article on recursive descent parsing](http://matt.might.net/articles/parsing-regex-with-recursive-descent/)
+[Wiki article on Thompson's Construction](https://en.wikipedia.org/wiki/Thompson%27s_construction)
